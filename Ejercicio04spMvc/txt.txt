@@ -27,3 +27,9 @@ ClsEditarPersonaVM : ClsPersona
 	ClsEditarPersonaVM (){
 	departamentos = ClsListado.ObtenerDepartamento()
 	}
+
+--------------------------------------------
+Controlllers
+--------------------------------------------
+ActionResultEditarPersona()
+ClsEditarPersonaVM miVM = new ClsEditarPersona();
