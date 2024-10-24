@@ -6,8 +6,6 @@
 
         public String Apellido { get; set; }
 
-        public int Edad { get; set; }
-
         public int idDepartamento { get; set; }
     }
 }

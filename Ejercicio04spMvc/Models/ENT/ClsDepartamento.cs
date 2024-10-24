@@ -2,9 +2,18 @@
 {
     public class ClsDepartamento
     {
-        public int IdDepartamento { get; set; }
+        private static int nextId = 1; // Variable estática para el siguiente ID
 
-        public String NombreDept {  get; set; }
+        public int idDepartamento { get; private set; } // Propiedad de solo lectura
+        public string nombreDepartamento { get; set; }
 
+        // Constructor que asigna el ID y el nombre
+        public ClsDepartamento(string nombre)
+        {
+            idDepartamento = nextId++; // Asignar el ID y luego incrementarlo
+            nombreDepartamento = nombre;
+        }
     }
+
+
 }

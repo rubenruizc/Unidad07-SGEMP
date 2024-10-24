@@ -1,6 +1,10 @@
 using Ejercicio04spMvc.Models;
+using Ejercicio04spMvc.Models.ENT;
+using Ejercicio04spMvc.Models.DAL;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Diagnostics;
+using Ejercicio04spMvc.Models.VM;
 
 namespace Ejercicio04spMvc.Controllers
 {
@@ -16,6 +20,20 @@ namespace Ejercicio04spMvc.Controllers
         public IActionResult Index()
         {
             return View();
+        }
+
+        public ActionResult EditarPersona()
+        {
+            ClsPersona persona = ClsListado.ObtenerPersonaAleatoria(); // Llamada al método estático
+
+            var viewModel = new ClsEditarPersonaVM
+            {
+                Nombre = persona.Nombre,
+                Apellido = persona.Apellido,
+                idDepartamento = persona.idDepartamento
+            };
+
+            return View(viewModel);
         }
 
         public IActionResult Privacy()
